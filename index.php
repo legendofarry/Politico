@@ -1,3 +1,3 @@
 <?php
-require("views/registration/register.view.php");
-
+require("html/register.php");
+require("db.php");
