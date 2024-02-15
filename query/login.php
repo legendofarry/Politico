@@ -1,0 +1,62 @@
+<?php
+require("config.php");
+
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+
+    try {
+        require_once('db.php');
+        require_once('login.modal.php');
+        require_once('validations.php');
+        require_once('login.controller.php');
+
+        $errors = [];
+
+        if (isEmpty($email, $password)) {
+            $errors['emptyField'] = '<p class="w-fit bg-[gold] py-[2px] tracking-[2px] font-semibold px-[10px] rounded-full mb-[10px]">  Email and Password are required.</p>';
+            $_SESSION['errors'] = $errors;
+            header("Location: ../login.html.php");
+            die();
+        }
+
+        $result = getUser($pdo, $email);
+
+        if (verifyEmail($result)) {
+            $errors['wrongEmail'] = '<p class="w-fit bg-[gold] py-[2px] tracking-[2px] font-semibold px-[10px] rounded-full mb-[10px]">  Email seems to be the issue...</p>';
+        }
+
+        if (!verifyEmail($result) && verifyPassword($password, $result['password'])) {
+            $errors['Password-Error'] = '<p class="w-fit bg-[gold] py-[2px] tracking-[2px] font-semibold px-[10px] rounded-full mb-[10px]" >  Incorrect password</p>';
+        }
+
+        $_SESSION['errors'] = $errors;
+        if (!empty($errors)) {
+            header("Location: ../login.html.php");
+            die();
+        }
+
+        $newSession = session_create_id();
+        $sessionId = $newSession . "_" . $result['id'];
+        session_id($sessionId);
+
+        $_SESSION['user'] = $result;
+        $_SESSION['isAdmin'] = !!$result['email'];
+        $_SESSION['last_regeneration'] = time();
+
+
+        header('Location: ../login.html.php?login=success');
+
+        header('Location: ../index.php');
+        die();
+
+    } catch (PDOException $e) {
+        die('Failed' . $e->getMessage());
+    }
+
+} else {
+    header("Location: ../index.php");
+    die();
+}

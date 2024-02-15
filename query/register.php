@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require('config.php');
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $firstname = $_POST['firstName'];
     $lastname = $_POST['lastName'];
@@ -21,20 +23,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors = [];
 
         if (isEmpty($email, $password)) {
-            $errors['emptyField'] = 'Email and Password are required to connect...';
+            $errors['emptyField'] = '<p class="w-[10%] bg-[gold] py-[10px] tracking-[2px]">  Email and Password are required to connect...</p>';
         }
 
         if (isEmailValid($email)) {
-            $errors['wrongEmail'] = 'Email seems to be the issue...';
+            $errors['wrongEmail'] = '<p class="w-[10%] bg-[gold] py-[10px] tracking-[2px]">  Email seems to be the issue...</p>';
         }
 
         if (isEmailTaken($pdo, $email)) {
-            $errors['userExists'] = 'Email already exists...';
+            ;
+            $errors['userExists'] = '<p class="w-[10%] bg-[gold] py-[10px] tracking-[2px]">  Email already exists...</p>';
         }
 
-        require('config.php');
         if ($errors) {
             $_SESSION['error'] = $errors;
+
+            $signupData = [
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'othername' => $othername,
+                'email' => $email,
+                'phoneNumber' => $phoneNumber
+            ];
+            $_SESSION['signupData'] = $signupData;
+
             header("Location: ../index.php");
             die();
         }
