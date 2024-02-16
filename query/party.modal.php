@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-function getEmail(object $pdo, string $email)
+function getTitle(object $pdo, string $title)
 {
-    $query = "SELECT * FROM users WHERE email=:email;";
+    $query = "SELECT * FROM party WHERE title=:title;";
     $statement = $pdo->prepare($query);
-    $statement->bindParam(":email", $email);
+    $statement->bindParam(":title", $title);
     $statement->execute();
 
     $result = $statement->fetch(PDO::FETCH_ASSOC);
