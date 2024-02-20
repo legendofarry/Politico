@@ -27,12 +27,23 @@ require("query/middleware/is-logged-in.php");
     <main class="mt-[100px]">
         <div class="relative">
 
-            <button onclick="displayCreatePartyPage()" type="button" class="createBtn inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
-                <span>Create party</span>
-                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                </svg>
-            </button>
+            <div class="flex gap-[20px]">
+                <button onclick="displayCreatePartyPage()" type="button" class="createBtn text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900" aria-expanded="false">
+                    <span>Create party</span>
+                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+
+                <a href="party.list.html.php" class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                    <svg height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 38h20v-30h-20v30zm-10-4h8v-22h-8v22zm32-22v22h8v-22h-8z" />
+                        <path d="M0 0h48v48h-48z" fill="none" />
+                    </svg>
+                    ...Parties
+                </a>
+            </div>
+
 
 
 
@@ -93,12 +104,12 @@ require("query/middleware/is-logged-in.php");
                                     </div>
 
                                     <div class="locationDiv sm:col-span-4">
-                                        <label for="location" class="block text-sm font-medium leading-6 text-gray-900">location</label>
+                                        <label for="Location" class="block text-sm font-medium leading-6 text-gray-900">location</label>
                                         <div class="mt-2">
                                             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                                 <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">Just
                                                     type the location for your business </span>
-                                                <input type="text" name="location" id="location" autocomplete="location" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 outline-none">
+                                                <input type="text" name="Location" id="Location" autocomplete="Location" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 outline-none">
                                             </div>
                                         </div>
                                     </div>
@@ -215,6 +226,8 @@ require("query/middleware/is-logged-in.php");
     require("query/party.view.php");
     showPartyResult();
     ?>
+
+
 
 </body>
 

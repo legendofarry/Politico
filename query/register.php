@@ -47,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 'phoneNumber' => $phoneNumber
             ];
             $_SESSION['signupData'] = $signupData;
+
             header("Location: ../index.php");
             die();
         }
