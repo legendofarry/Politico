@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 require_once('validations.php');
 
 function signUpUser(

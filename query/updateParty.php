@@ -5,25 +5,6 @@ require("config.php");
 require("middleware/is-logged-in.php");
 
 
-// require("validations.php");
-
-// function updateParty(
-//     object $pdo,
-//     string $title,
-//     string $description,
-//     string $Location
-// ) {
-//     $query = "UPDATE party SET  title =:title, description = :description, Location = :Location WHERE id=3";
-
-//     $statement = $pdo->prepare($query);
-//     $statement->bindParam(":title", $title);
-//     $statement->bindParam(":description", $description);
-//     $statement->bindParam(":Location", $Location);
-
-//     $statement->execute();
-// }
-
-// require("config.php");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -32,13 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
         require('db.php');
         require('party.modal.php');
-        // die('hdfgsdfsh');
-        // session_id('user_id');
+
         $id = $_SESSION['user']['id'];
-        var_dump($id);
-        // session_start();
-        $query = "UPDATE party SET  title =:title, description = :description, Location = :Location WHERE id  =  $id";
-        // die();
+
+        $query = "UPDATE party SET  title =:title, description = :description, Location = :Location WHERE title  =  title";
+
 
         $statement = $pdo->prepare($query);
         $statement->bindParam(":title", $title);
