@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     try {
-        require_once('db.php');
-        require_once('login.modal.php');
-        require_once('validations.php');
-        require_once('login.controller.php');
+        require('db.php');
+        require('login.modal.php');
+        require('validations.php');
+        require('login.controller.php');
 
         $errors = [];
 
@@ -51,11 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         header('Location: ../index.php');
         die();
-
     } catch (PDOException $e) {
         die('Failed' . $e->getMessage());
     }
-
 } else {
     header("Location: ../index.php");
     die();

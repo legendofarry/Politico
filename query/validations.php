@@ -25,3 +25,21 @@ function isEmailTaken(object $pdo, string $email)
         return false;
     }
 }
+
+function isTitleTaken(object $pdo, string $title)
+{
+    if (getTitle($pdo, $title)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isOfficeTitleTaken(object $pdo, string $title)
+{
+    if (getOffice($pdo, $title)) {
+        return true;
+    } else {
+        return false;
+    }
+}

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-            rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>OFFICE</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>OFFICE</title>
+</head>
 
-    <body class="font-['Montserrat'] font-semibold">
-        <h1 class="text-2xl text-center">Welcome to the OFFICE
-            <?= $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname'] ?>
-        </h1>
-    </body>
+<body class="font-['Montserrat'] font-semibold">
+    <h1 class="text-2xl text-center">Welcome to the OFFICE
+        <?= $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname'] ?>
+    </h1>
+</body>
 
 </html>
-<?= var_dump($_SERVER['REQUEST_URI']) ?>
+<?=
+
+var_dump($_SESSION);
+
+?>
 <?php
 require("query/config.php");
 require("query/register.view.php");

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 require('config.php');
@@ -9,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $othername = $_POST['otherName'];
     $email = $_POST['email'];
     $phoneNumber = $_POST['phoneNumber'];
-    $isAdmin = (INT) $_POST['isAdmin'];
+    $isAdmin = (int) $_POST['isAdmin'];
     $password = $_POST['password'];
 
 
@@ -31,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         if (isEmailTaken($pdo, $email)) {
-            ;
+
             $errors['userExists'] = '<p class="w-[10%] bg-[gold] py-[10px] tracking-[2px]">  Email already exists...</p>';
         }
 
         if ($errors) {
-            $_SESSION['error'] = $errors;
+            $_SESSION['errors'] = $errors;
 
             $signupData = [
                 'firstname' => $firstname,
@@ -52,16 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         signUpUser($pdo, $firstname, $lastname, $othername, $email, $phoneNumber, $isAdmin, $password);
+
         header("Location: ../index.php?signup=success");
 
         $pdo = null;
         $statement = null;
         die("");
-
     } catch (PDOException $e) {
         die('Failed' . $e->getMessage());
     }
-
 } else {
     header("Location: ../index.php");
     die();
