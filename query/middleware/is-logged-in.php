@@ -16,3 +16,19 @@ if (!isset($_SESSION['user']) && !in_array($_SERVER['REQUEST_URI'], ['/register.
     header('Location: ../index.php');
     die();
 }
+
+$admin = $_SESSION['user']['isAdmin'] === 'yes';
+
+// if (!isset($admin) && !in_array($_SERVER['REQUEST_URI'], ['/register.html.php', '/login.html.php'])) {
+//     session_destroy();
+//     header('Location: ../login.html.php');
+//     die();
+// } else if (isset($admin) && in_array($_SERVER['REQUEST_URI'], ['/register.html.php', '/login.html.php'])) {
+//     header('Location: ../users.homepage.php');
+//     die();
+// }
+
+// if (!isset($admin) && in_array($_SERVER['REQUEST_URI'], ['/index.php'])) {
+//     header('Location: ../users.homepage.php');
+//     die();
+// }
