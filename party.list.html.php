@@ -113,6 +113,11 @@ require('partials/header.html.php');
 
                     Create
                 </button>
+
+
+                <a href="offices.html.php" class="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                    Offices
+                </a>
             </div>
         </form>
     </div>

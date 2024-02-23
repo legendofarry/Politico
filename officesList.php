@@ -43,7 +43,7 @@
                 <div class="flex">
 
                     <div class="input-container">
-                        <input placeholder="fullnames" name="fullnames" class="input-field" type="text">
+                        <input placeholder="fullnames" name="fullname" class="input-field" type="text">
                         <label for="input-field" class="input-label">Full Names</label>
                         <span class="input-highlight"></span>
                     </div>

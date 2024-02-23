@@ -10,10 +10,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $othername = $_POST['otherName'];
     $email = $_POST['email'];
     $phoneNumber = $_POST['phoneNumber'];
-    $isAdmin = (int) $_POST['isAdmin'];
+    $isAdmin = $_POST['isAdmin'];
     $password = $_POST['password'];
 
+    // if (isset($isAdmin)) {
+    //     $isAdmin = 'admin';
+    // } else {
+    //     $isAdmin = 'adminn not set';
+    // }
 
+
+    // die($isAdmin);
 
     try {
         require_once('db.php');

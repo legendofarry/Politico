@@ -45,11 +45,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['user'] = $result;
         $_SESSION['isAdmin'] = !!$result['email'];
         $_SESSION['last_regeneration'] = time();
+        $admin = $_SESSION['user']['isAdmin'];
 
+        if ($admin === 'yes') {
+            header('Location: ../index.php');
+        } else {
+            header('Location: ../users.homepage.php');
+        }
 
-        header('Location: ../login.html.php?login=success');
-
-        header('Location: ../index.php');
         die();
     } catch (PDOException $e) {
         die('Failed' . $e->getMessage());

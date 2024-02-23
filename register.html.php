@@ -75,10 +75,20 @@ require("query/middleware/is-logged-in.php");
                         </div>
                     </div>
 
-                    <div class="isAdmin flex items-center gap-[10px] mb-[25px]">
-                        <label for="isAdmin" class="block text-sm font-medium leading-6 text-gray-900">Admin</label>
-                        <input type="checkbox" id="isAdmin" name="isAdmin" class="rounded-full border-2">
-                    </div>
+
+                    <label for="">Admin
+                        <div class="isAdmin flex items-center gap-[10px] mb-[15px]">
+                            <label for="yes" class="block text-sm font-medium leading-6 text-gray-900">Yes</label>
+                            <input type="checkbox" id="yes isAdmin" name="isAdmin" value="yes" class="rounded-full border-2">
+                        </div>
+
+                        <div class="isAdmin flex items-center gap-[10px] mb-[25px]">
+                            <label for="no" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                            <input type="checkbox" id="no isAdmin" name="isAdmin" value="no" class="rounded-full border-2">
+                        </div>
+
+                    </label>
+
 
                     <div class="password flex flex-col items-center justify-between w-[70%] mx-auto mb-[15px]">
                         <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
