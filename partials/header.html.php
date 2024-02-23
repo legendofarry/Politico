@@ -15,6 +15,7 @@ require("query/register.view.php");
     <meta name="description" content="">
 
     <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/createOffice.css">
     <style>
