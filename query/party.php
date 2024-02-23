@@ -1,12 +1,20 @@
 <?php
 
 declare(strict_types=1);
-require('config.php');
+require("config.php");
+require("middleware/is-logged-in.php");
+
+$id = $_SESSION['user']['id'];
+
+// $partyId = $id;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $Location = $_POST['Location'];
+    // $party_Id = $partyId;
+    // var_dump($party_Id);
+    // die();
 
 
     try {
@@ -35,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         registerParty($pdo, $title, $description, $Location);
 
-        header("Location: ../party.list.html.php");
+        header("Location: ../party.list.html.php?id=$id");
         $pdo = null;
     } catch (PDOException $e) {
         die('Failed man' . $e->getMessage());

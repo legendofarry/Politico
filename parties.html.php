@@ -1,4 +1,5 @@
 <?php
+require("query/db.php");
 require("query/config.php");
 require("query/middleware/is-logged-in.php");
 // die('dfsf');
@@ -21,7 +22,9 @@ require("query/middleware/is-logged-in.php");
 
 <body class="font-['Montserrat'] font-semibold">
     <h1 class="text-2xl text-center">Welcome to the PARTY
-        <?= $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname'] ?>
+        <?= $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname'];
+        var_dump($pdo);
+        ?>
     </h1>
 
     <main class="mt-[100px]">
@@ -114,7 +117,7 @@ require("query/middleware/is-logged-in.php");
                                         </div>
                                     </div>
 
-
+                                    <input type="text" name="id" class="id">
 
                                 </div>
                             </div>

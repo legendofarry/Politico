@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $phoneNumber = $_POST['phoneNumber'];
     $Location = $_POST['Location'];
-    $party = $_POST['party'];
     $password = $_POST['password'];
     $officeType = $_POST['officeType'];
     $description = $_POST['description'];
@@ -39,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 'email' => $email,
                 'phoneNumber' => $phoneNumber,
                 'Location' => $Location,
-                'party' => $party,
                 'password' => $password,
                 'officeType' => $officeType,
                 'description' => $description
@@ -50,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             die();
         }
 
-        createOffice($pdo, $title, $email, $phoneNumber, $Location, $party, $password, $officeType, $description);
-        header("Location: ../index.php");
+        createOffice($pdo, $title, $email, $phoneNumber, $Location, $password, $officeType, $description);
+        header("Location: ../offices.html.php");
 
         $pdo = null;
         $statement = null;

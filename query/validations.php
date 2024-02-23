@@ -43,3 +43,12 @@ function isOfficeTitleTaken(object $pdo, string $title)
         return false;
     }
 }
+
+function isCandidateEmailTaken(object $pdo, string $email)
+{
+    if (checkCandidate($pdo, $email)) {
+        return true;
+    } else {
+        return false;
+    }
+}

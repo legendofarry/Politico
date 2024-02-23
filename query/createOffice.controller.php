@@ -10,12 +10,11 @@ function createOffice(
     string $email,
     $phoneNumber,
     string $Location,
-    string $party,
     string $password,
     string $officeType,
     string $description
 ) {
-    $query = "INSERT INTO office (title,email,phoneNumber,Location,party,password,officeType,description) VALUES(:title,:email,:phoneNumber,:Location,:party,:password,:officeType,:description)";
+    $query = "INSERT INTO office (title,email,phoneNumber,Location,password,officeType,description) VALUES(:title,:email,:phoneNumber,:Location,:password,:officeType,:description)";
 
 
     $statement = $pdo->prepare($query);
@@ -29,7 +28,6 @@ function createOffice(
     $statement->bindParam(":email", $email);
     $statement->bindParam(":phoneNumber", $phoneNumber);
     $statement->bindParam(":Location", $Location);
-    $statement->bindParam(":party", $party);
     $statement->bindParam(":password", $passHash);
     $statement->bindParam(":officeType", $officeType);
     $statement->bindParam(":description", $description);
