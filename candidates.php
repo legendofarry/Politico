@@ -96,15 +96,6 @@ require("query/middleware/is-logged-in.php");
 
         <ul class="pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700">
             <li>
-                <button id="partyBtn" class="partyBtn flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
-                    <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
-                    </svg>
-                    <span class="ml-3">Toggle Sections</span>
-                </button>
-            </li>
-
-            <li>
                 <form action="myVotes.html.php" method="POST">
                     <button id="partyBtn" type="submit" class="partyBtn flex items-center p-2 text-base font-normal text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group">
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -133,49 +124,17 @@ require("query/middleware/is-logged-in.php");
 </aside>
 
 
-<section class="">
-    <main class="p-4 md:ml-64 h-auto pt-20">
-        <div class="flex flex-col relative">
-            <div id="section1">
-                <h1 class="text-center my-2 mb-10 font-extrabold tracking-wider text-lg">OFFICES</h1>
-                <div class="officeList grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4 ">
-                    <?php
-                    require("query/userListOfficeModal.php");
-                    ?>
-                </div>
-            </div>
+<main class="p-4 md:ml-64 h-auto pt-20">
+    <div id="section2">
+        <h1 class="text-center mt-28 mb-10 font-extrabold tracking-wider text-lg">Candidates</h1>
 
-            <form action="candidates.php" class="text-center ">
-                <button type="submit" class="absolute left-0 text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-semibold rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 tracking-wide">
-                    <svg height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 38h20v-30h-20v30zm-10-4h8v-22h-8v22zm32-22v22h8v-22h-8z"></path>
-                        <path d="M0 0h48v48h-48z" fill="none"></path>
-                    </svg>
-                    ...CANDIDATES
-                </button>
-            </form>
+        <div class="grid grid-cols-1 border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-fit mb-4 py-4 px-10 ">
+            <?php
+            require("query/oppositions.modal.php");
+            ?>
         </div>
-
-        <div id="section2">
-            <h1 class="text-center mt-28 mb-10 font-extrabold tracking-wider text-lg">PARTY</h1>
-
-            <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-fit mb-4 py-4 px-4">
-                <?php
-                require("query/userListPartyModal.php");
-                ?>
-            </div>
-        </div>
-
-
-        <!-- <div id="section3" class="grid grid-cols-2 gap-4 mb-4">
-            <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
-            <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
-            <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
-            <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-48 md:h-72"></div>
-        </div> -->
-    </main>
-</section>
-
+    </div>
+</main>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -196,7 +155,7 @@ require("query/middleware/is-logged-in.php");
 
             currentSection++;
 
-            if (currentSection > 2) {
+            if (currentSection > 3) {
                 currentSection = 1;
             }
         });
