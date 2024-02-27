@@ -1,5 +1,5 @@
 <li>
-    <div class="PARTY card-client flex justify-betwen w-full relative">
+    <div class="PARTY card-client flex  w-full relative">
         <div></div>
         <div class="user-picture">
             <img class="w-72 rounded-lg sm:rounded-none sm:rounded-l-lg" src="images/clay-banks-BY-R0UNRE7w-unsplash.jpg">

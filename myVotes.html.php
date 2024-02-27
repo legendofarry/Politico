@@ -1,7 +1,7 @@
 <?php
+require("query/db.php");
 require("query/config.php");
 require("query/middleware/is-logged-in.php");
-require("query/register.view.php");
 ?>
 
 <!DOCTYPE html>
@@ -54,3 +54,11 @@ require("query/register.view.php");
         }
     </style>
 </head>
+
+<body>
+    <main>
+        <h1>My VOTES</h1>
+        <p>
+        </p>
+    </main>
+</body>

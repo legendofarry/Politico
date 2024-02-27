@@ -113,21 +113,3 @@
         document.querySelector('.createOfficeDiv').classList.toggle('hidden');
     }
 </script>
-
-<!-- <div class="card-container">
-        <span class="party pro"><?= $office['party'] ?></span>
-        <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-        <h3 class="officeType"><?= $office['title'] ?></h3>
-        <h6></h6>
-        <p> <?= $office['officeType'] ?></p>
-
-        <div class="buttons">
-            <button class="primary">
-                Vote
-            </button>
-            <button class="primary ghost">
-                View Candidates
-            </button>
-        </div>
-
-    </div> -->
