@@ -13,15 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $isAdmin = $_POST['isAdmin'];
     $password = $_POST['password'];
 
-    // if (isset($isAdmin)) {
-    //     $isAdmin = 'admin';
-    // } else {
-    //     $isAdmin = 'adminn not set';
-    // }
-
-
-    // die($isAdmin);
-
     try {
         require_once('db.php');
         require_once('register.modal.php');

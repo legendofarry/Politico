@@ -1,20 +1,3 @@
-<!-- <?php
-        // LOOP TILL END OF DATA
-        while ($rows = $result->fetch_assoc()) {
-        ?>
-        <tr>
-            <!-- FETCHING DATA FROM EACH
-                        ROW OF EVERY COLUMN -->
-<td><?php echo $rows['username']; ?></td>
-<td><?php echo $rows['problems']; ?></td>
-<td><?php echo $rows['score']; ?></td>
-<td><?php echo $rows['articles']; ?></td>
-</tr>
-<?php
-        }
-?>
-
-
 <div class="PARTY card-client flex justify-betwen w-full relative">
         <div></div>
         <div class="user-picture">
@@ -279,17 +262,19 @@
 
 </div>
 
-<!-- *********************************** -->
 
-<!-- <div class="skills">
-            <h6>Skills</h6>
-            <ul>
-                <li>UI / UX</li>
-                <li>Front End Development</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node</li>
-            </ul>
-        </div> -->
+
+
+
+
+
+
+
+
+
+
+<?php require('partials/top.html.php');
+?>
+
+
+<?php require('partials/bottom.html.php') ?>
