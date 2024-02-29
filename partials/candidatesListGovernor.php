@@ -14,7 +14,10 @@
 
     <form action="query/vote.php" method="POST">
         <input type="hidden" name="votes" value="<?= $candidate['votes'] ?>">
-        <input type="hidden" name="candidateId" value="<?= $candidate['id'] ?>">
+        <input type="hidden" name="candidate_id" value="<?= $candidate['id'] ?>">
+        <input type="hidden" name="candidateName" value="<?= $candidate['fullname'] ?>">
+        <input type="hidden" name="candidateOfficeType" value="<?= $candidate['officeType'] ?>">
+        <input type="hidden" name="candidateParty" value="<?= $candidate['party'] ?>">
         <button type="submit" value="vote" class="voteBtn absolute bottom-2.5 right-2.5 cursor-pointer bg-white px-[6px] pt-[10px] rounded-tl-lg hover:bg-[gold]">
             <svg viewBox="0 0 60 60" height="50" xmlns="http://www.w3.org/2000/svg">
                 <defs>

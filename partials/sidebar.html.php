@@ -1,7 +1,6 @@
 <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
     <div class="p-6 bg-white">
         <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-
     </div>
     <nav class="text-white text-base font-semibold ">
         <a href="index.php" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
@@ -16,20 +15,7 @@
             <i class="fas fa-table mr-3"></i>
             Offices
         </a>
-        <a href="html/news.html.php" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-sticky-note mr-3"></i>
-            News
-        </a>
-        <a href="html/support.html.php" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-tablet-alt mr-3"></i>
-            Support
-        </a>
-
     </nav>
-
-    <div>
-        <strong>ADMIN</strong>
-    </div>
 
 </aside>
 

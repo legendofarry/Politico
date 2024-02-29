@@ -101,7 +101,7 @@ require("query/middleware/is-logged-in.php");
                         <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
                         </svg>
-                        <span class="ml-3">My Votes</span>
+                        <span class="ml-3">My Activity</span>
                     </button>
                 </form>
 
@@ -123,10 +123,12 @@ require("query/middleware/is-logged-in.php");
     </div>
 </aside>
 
-
 <main class="p-4 md:ml-64 h-auto pt-20">
     <div id="section2">
-        <h1 class="text-center mt-28 mb-10 font-extrabold tracking-wider text-lg">Candidates</h1>
+        <h1 class="text-center mt-10 mb-10 font-extrabold tracking-wider text-lg">Candidates</h1>
+        <h2 class="bg-[gold] w-fit rounded-full px-[10px] my-[10px] font-extrabold tracking-wide">YOU CAN ONLY VOTE ONCE,
+            NO REVOTING
+        </h2>
 
         <div class="grid grid-cols-1 border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-fit mb-4 py-4 px-10 ">
             <?php
